@@ -1,1 +1,1 @@
-web: java -jar target/search-1.0.jar
+worker: java -jar target/search-1.0.jar
