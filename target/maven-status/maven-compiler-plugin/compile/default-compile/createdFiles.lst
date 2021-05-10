@@ -1,2 +1,3 @@
 databasing\App.class
 databasing\Database\ConnectionHelper.class
+databasing\Discord\DiscordBot.class
