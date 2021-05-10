@@ -1,1 +1,1 @@
-worker: java -cp target/search-1.0.jar databasing.App
+worker: java -jar target/search-1.0-jar-with-dependencies.jar
