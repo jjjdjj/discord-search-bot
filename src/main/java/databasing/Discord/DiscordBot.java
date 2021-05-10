@@ -14,7 +14,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public class DiscordBot {
-    private static String token = "ODQxMDc4NzE3MjI4OTA4NTc1.YJhhmA.lqXLABPzSABlotNS1wiAR4aOXZw";
+    private static String _token = "ODQxMDc4NzE3MjI4OTA4NTc1.YJhhmA.lqXLABPzSABlotNS1wiAR4aOXZw";
     private GatewayDiscordClient _gatewayClient;
     private String _channelId;
     private String _listener = "!search";
@@ -25,7 +25,8 @@ public class DiscordBot {
     }
 
     public void Init() {
-        _gatewayClient = DiscordClientBuilder.create(token).build().login().block();
+        _token = System.getenv().get("TOKEN");
+        _gatewayClient = DiscordClientBuilder.create(_token).build().login().block();
 
         _gatewayClient.getEventDispatcher().on(ReadyEvent.class)
         .subscribe(event -> {
